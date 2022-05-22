@@ -1,0 +1,277 @@
+
+@import url("components/banner.css");
+*{
+    margin:0px;
+    padding:0px;
+  }
+  a{
+    text-decoration:none;
+    color:white;
+  }
+  
+  main{
+    display:grid;
+    grid-template-rows:100vh 1fr 90vh 10vh;
+    overflow-x: hidden;
+  }
+  /**Navigation*/
+  
+  header{
+    background-color:#F98363; 
+    height:7.5vh;
+    width:100%;
+    position:fixed;
+    z-index: 1;
+  }
+  #navbar{
+    display: flex;
+    justify-content: space-between;
+  }
+  #nav-title{
+    color: white;
+    width: 10vw;
+    height:7.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #navbar ul{
+    display:flex;
+    flex-direction:row;
+    height:7.5vh;
+    justify-content:flex-end;
+    align-items:center;
+  }
+  
+  #navbar li{
+    width:100%;
+    list-style-type:none;
+    width:10vw;
+    height:7.5vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-weight:normal;
+    font-size:1.5rem;
+    transition:background-color ease-out 250ms;
+  }
+  
+  #navbar a{
+    text-decoration:none;
+    color:white;
+    transition:color ease-out 250ms;
+  }
+  #navbar li:hover a{
+    color:#63d9f9;
+  }
+  #navbar li:hover{
+    background-color:white;
+    cursor:pointer;
+  }
+ 
+  /*Projects*/
+  #projects{
+    background-color:white;
+    text-align:center;
+  }
+  
+  #title2{
+    color:#63d9f9;
+    position:relative;
+    display:inline-block;
+    font-size:2rem;
+    z-index:0; /*Matches with before and after*/
+  }
+  /*Crédits à Kevin Powel*/
+  #title2::before, #title2::after{
+    content:"";
+    display:block;
+    position:absolute;
+    height:100%;
+  }
+  
+  #title2::before{
+    background:white;
+    z-index:-1;
+    left:-20px;
+    right:-20px;
+    
+  }
+  #title2::after{
+    background:#63d9f9;
+    width:100vw;
+    left:50%; /*dealing with the absolute position*/
+    transform:translateX(-50%);/*releft on his own width*/
+    top:0; /*cover the title*/
+    z-index:-2;
+  }
+  /*Ajouter la banderole before after*/
+  
+  #card-container{
+    margin:auto;
+    width:60%;
+    height:90%;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding-top:5vh;
+    padding-bottom:5vh;
+    gap:20px;
+  }
+  .project-tile{
+    background-color:rgba(25,28,33,255);
+    border:solid 2px #63d9f9;
+    border-radius:10px;
+    width:300px;
+    height: 400px;
+    margin-bottom:5vh;
+    display:flex;
+    align-items:flex-start;
+    transition:opacity ease-out 250ms;
+  }
+  
+  .img-tile{
+    max-width:100%;
+    height:300px;
+    display:block;
+    border-top-left-radius:7.5px;
+    border-top-right-radius:7.5px;
+  }
+  
+  .project-tile:hover{
+    opacity:0.7;
+  }
+  .text-tile{
+    color:white;
+    font-size:1.5rem;
+    max-width:100%;
+    height:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-top:solid 1px;
+  }
+  
+  #btn{
+    background-color:#63d9f9;
+    border-radius:5px;
+    display:flex;
+    flex-direction:column;
+    height:2rem;
+    padding:0.5em 1em;
+    margin:auto;
+    margin-bottom:5vh;
+    align-items:center;
+    font-size:1.5rem;
+    transition:background-color ease-out 250ms;
+  }
+  
+  #btn:hover{
+    background-color:#F98363;
+    cursor:pointer;
+  }
+  #btn a{
+    color:white;
+  }
+  
+  
+  /*Contact*/
+  #contact{
+    background-color:#63d9f9;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    gap:10%;
+  }
+  
+  #contact-me{
+    border-bottom:solid white;
+    border-radius:10px;
+    width:30vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
+  /*Ajouter une animation répétitive*/
+  #social{
+    display:flex;
+    width:60vw;
+    justify-content:space-around;
+  }
+  #social >a{
+    transition:color ease-out 250ms;
+  }
+  #social >a:hover{
+    color:#F98363;
+  }
+  #title3{
+    font-size:3rem;
+  }
+  
+  /*Footer*/
+  footer{
+    display:flex;
+    flex-direction:columns;
+    justify-content:space-around;
+    align-items:center;
+    color:white;
+    background:#F98363;
+    height:10vh;
+  }
+  
+  @media (max-width:1024px){
+    #navbar ul{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+  }
+  #card-container{
+    width:80%;
+  }
+  }
+  
+  @media (max-width:768px){
+  #btn{
+    margin-top:30px;
+  }
+  #contact-me{
+    width:50%;
+  }
+  #social{
+    width:100%;
+  }
+  footer{
+    font-size:0.7rem;  
+  }
+  }
+  
+  @media (max-width:638px){
+  #welcome-section{
+    font-size:1rem;
+  }
+  #contact-me{
+    width:90%;
+    font-size:1rem;
+  }
+    
+    footer{
+      flex-direction:column;
+      flex-wrap:wrap;
+      padding-left:5%;
+      padding-right:5%;
+    }
+  #social{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-size:1.5rem;
+  }
+  }
